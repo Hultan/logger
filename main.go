@@ -7,9 +7,6 @@ import (
 	"os"
 )
 
-type Log struct {
-}
-
 type Logger struct {
 	Path    string
 	Trace   *log.Logger
@@ -22,7 +19,7 @@ type Logger struct {
 
 const constMaxLogFileSize = 500000
 
-func (l *Log) NewStandardLogger(path string) (*Logger, error) {
+func NewStandardLogger(path string) (*Logger, error) {
 	logger := &Logger{Path: path}
 
 	logFile, err := logger.getLogFile()
